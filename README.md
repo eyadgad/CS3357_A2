@@ -37,7 +37,7 @@ To complete this assignment, follow these steps:
 
 2. **Client Implementation**:
     - Open `client.py`.
-    - Implement the required client functions based on the provided guidelines.
+    - Implement the required client functions based on the provided guidelines. 
     - Ensure error handling and graceful exit.
 
 3. **Testing**:
