@@ -65,7 +65,7 @@ Replace `<client_name>` with your desired username.
 
 ## Contact
 
-If you find any issues or have suggestions, please feel free to send me on egad@uwo.ca
+If you find any issues, feel free to send me on egad@uwo.ca
 
 
 ---
