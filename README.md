@@ -1,7 +1,7 @@
 
 # CS3357A Assignment #2: Building Two Chatroom Applications Using TCP and UDP
 
-This repository contains the code and instructions for CS3357A Assignment #2, where you will implement two chatroom applications in Python using both TCP and UDP protocols.
+This repository contains the code templates and instructions for CS3357A Assignment #2, where you will implement two chatroom applications in Python using TCP and UDP protocols.
 
 ## Assignment Overview
 
@@ -23,11 +23,10 @@ In this assignment, you will build two chatroom applications: one using TCP and 
 
 This repository is organized as follows:
 
-- `tcp_server.py`: Contains the code for the TCP chat server.
-- `tcp_client.py`: Contains the code for the TCP chat client.
-- `udp_server.py`: Contains the code for the UDP chat server.
-- `udp_client.py`: Contains the code for the UDP chat client.
-- `README.md`: This file, containing assignment instructions and usage guidelines.
+- `tcp_server.py`: Contains the code template for the TCP chat server.
+- `tcp_client.py`: Contains the code template for the TCP chat client.
+- `udp_server.py`: Contains the code template for the UDP chat server.
+- `udp_client.py`: Contains the code template for the UDP chat client.
 
 ## Instructions
 
@@ -45,10 +44,6 @@ To complete this assignment, follow these steps:
 
 3. **Testing**:
    - Test your TCP and UDP chat servers and clients by running them locally.
-   - Ensure that the servers can handle multiple client connections (TCP) and messages broadcasting (UDP).
-
-## Usage
-
 ### TCP Chatroom
 
 **Server Usage:**
@@ -64,6 +59,7 @@ python tcp_client.py <client_name>
 ```
 
 Replace `<client_name>` with your desired username.
+
 
 ### UDP Chatroom
 
@@ -83,9 +79,5 @@ Replace `<client_name>` with your desired username.
 
 ## Contact
 
-If you encounter any issues or have questions, please contact [Your Name] at [your_email@example.com].
+If you encounter any issues or have questions, please contact me at egad@uwo.ca 
 ```
-
-Replace `[Your Name]` and `[your_email@example.com]` with your name and email address for inquiries related to the assignment.
-
-Make sure to include this updated README in your GitHub repository for clear instructions and information about your assignment.
