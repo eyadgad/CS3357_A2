@@ -1,71 +1,92 @@
----
 
-# Assignment: Simple Chatroom Application
-This repository contains the code template and instructions for a simple chat server and client assignment.
+```markdown
+# CS3357A Assignment #2: Building Two Chatroom Applications Using TCP and UDP
+
+This repository contains the code and instructions for CS3357A Assignment #2, where you will implement two chatroom applications in Python using both TCP and UDP protocols.
 
 ## Assignment Overview
 
 ### Task Description
 
-In this assignment, you will implement a basic chat server and client in Python. The server should be able to:
+In this assignment, you will build two chatroom applications: one using TCP and the other using UDP. Each application will consist of both a server and a client component. 
 
-- Accept incoming connections from multiple clients.
-- Receive and broadcast messages to all connected clients.
-- Manage client connections and disconnections.
+**TCP Chatroom:**
+- The TCP chat server should accept incoming connections from multiple clients.
+- It should receive and broadcast messages to all connected clients.
+- The server should manage client connections and disconnections gracefully.
 
-The client should be able to:
-
-- Connect to the server.
-- Send and receive messages.
-- Gracefully exit the chat.
+**UDP Chatroom:**
+- The UDP chat server should accept incoming messages from multiple clients.
+- It should broadcast received messages to all connected clients.
+- The server should also handle client join and leave events.
 
 ### Directory Structure
 
 This repository is organized as follows:
 
-- `server.py`: Contains the code for the chat server.
-- `client.py`: Contains the code for the chat client.
+- `tcp_server.py`: Contains the code for the TCP chat server.
+- `tcp_client.py`: Contains the code for the TCP chat client.
+- `udp_server.py`: Contains the code for the UDP chat server.
+- `udp_client.py`: Contains the code for the UDP chat client.
+- `README.md`: This file, containing assignment instructions and usage guidelines.
 
 ## Instructions
 
 To complete this assignment, follow these steps:
 
-1. **Server Implementation**:
-    - Open `server.py`.
-    - Implement the required server functions based on the provided guidelines.
-    - Ensure error handling and graceful shutdown.
+1. **TCP Server and Client Implementation**:
+   - Open `tcp_server.py` and `tcp_client.py`.
+   - Implement the required server and client functions as per the provided guidelines.
+   - Ensure proper error handling and graceful shutdown for both server and client.
 
-2. **Client Implementation**:
-    - Open `client.py`.
-    - Implement the required client functions based on the provided guidelines. 
-    - Ensure error handling and graceful exit.
+2. **UDP Server and Client Implementation**:
+   - Open `udp_server.py` and `udp_client.py`.
+   - Implement the required server and client functions based on the provided guidelines.
+   - Ensure error handling and graceful exit for both server and client.
 
 3. **Testing**:
-    - Test your server and client by running them locally.
-    - Ensure that the server can handle multiple client connections and message broadcasting.
-
+   - Test your TCP and UDP chat servers and clients by running them locally.
+   - Ensure that the servers can handle multiple client connections (TCP) and messages broadcasting (UDP).
 
 ## Usage
 
-Provide clear instructions on how to use your server and client code. Include information on how to run them, connect to the server, and interact with the chat.
+### TCP Chatroom
 
-### Server Usage
+**Server Usage:**
 
 ```bash
-python server.py
+python tcp_server.py
 ```
 
-### Client Usage
+**Client Usage:**
 
 ```bash
-python client.py <client_name>
+python tcp_client.py <client_name>
+```
+
+Replace `<client_name>` with your desired username.
+
+### UDP Chatroom
+
+**Server Usage:**
+
+```bash
+python udp_server.py
+```
+
+**Client Usage:**
+
+```bash
+python udp_client.py <client_name>
 ```
 
 Replace `<client_name>` with your desired username.
 
 ## Contact
 
-If you find any issues, feel free to send me on egad@uwo.ca
+If you encounter any issues or have questions, please contact [Your Name] at [your_email@example.com].
+```
 
+Replace `[Your Name]` and `[your_email@example.com]` with your name and email address for inquiries related to the assignment.
 
----
+Make sure to include this updated README in your GitHub repository for clear instructions and information about your assignment.
