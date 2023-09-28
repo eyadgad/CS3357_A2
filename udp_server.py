@@ -14,8 +14,6 @@
 #    - Make sure that names of functions and variables are meaningful.
 def run(serverSocket, serverPort):
     # The main server function.
-    # It should handle incoming client messages,
-    # manage client connections, and broadcast messages.
     pass
 
 # **Main Code**:  
