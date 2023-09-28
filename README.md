@@ -42,8 +42,8 @@ To complete this assignment, follow these steps:
    - Implement the required server and client functions based on the provided guidelines.
    - Ensure error handling and graceful exit for both server and client.
 
-3. **Testing**:
-   - Test your TCP and UDP chat servers and clients by running them locally.
+##Testing:
+- Test your TCP and UDP chat servers and clients by running them locally.
 ### TCP Chatroom
 
 **Server Usage:**
