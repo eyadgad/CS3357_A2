@@ -59,7 +59,7 @@ python tcp_client.py <client_name>
 Replace `<client_name>` with your desired username.
 
 
-### TestingUDP Chatroom
+### Testing UDP Chatroom
 
 **Server Usage:**
 
