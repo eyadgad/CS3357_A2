@@ -1,5 +1,4 @@
 
-```markdown
 # CS3357A Assignment #2: Building Two Chatroom Applications Using TCP and UDP
 
 This repository contains the code and instructions for CS3357A Assignment #2, where you will implement two chatroom applications in Python using both TCP and UDP protocols.
