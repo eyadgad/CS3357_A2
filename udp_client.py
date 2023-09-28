@@ -16,8 +16,6 @@
 #    - Take into consideration error handling, interrupts,and client shutdown.
 def run(clientSocket, clientname, serverAddr, serverPort):
     # The main client function.
-    # It should handle incoming server messages, send messages to the server,
-    # manage the client's connection, and gracefully exit.
     pass
 
 # **Main Code**:  
@@ -25,7 +23,7 @@ if __name__ == "__main__":
     
     # Arguments: name address
     parser = argparse.ArgumentParser(description='argument parser')
-    parser.add_argument('name')  # to use: python client.py name
+    parser.add_argument('name')  # to use: python udp_client.py username
     args = parser.parse_args()
     clientname = args.name
     serverAddr = '127.0.0.1'
