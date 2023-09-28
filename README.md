@@ -78,4 +78,3 @@ Replace `<client_name>` with your desired username.
 ## Contact
 
 If you encounter any issues or have questions, please contact me at egad@uwo.ca 
-```
