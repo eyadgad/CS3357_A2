@@ -21,7 +21,6 @@ if __name__ == "__main__":
     server_port = 9301
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)# Creating a TCP socket.
     server_socket.bind(('127.0.0.1', server_port))
-    server_socket.listen(5) # set max no. of clients
     clients = [] #list to add the connected client sockets , feel free to adjust it to other place
 
     run(server_socket,server_port)# Calling the function to start the server.
