@@ -1,34 +1,55 @@
-# Assignment: TCP Simple Chat Room - TCP Server Code Implementation
+import socket
+import threading
+import select
 
-# **Libraries and Imports**: 
-#    - Import the required libraries and modules. 
-#    You may need socket, threading, select, time libraries for the client.
-#    Feel free to use any libraries as well.
+def broadcast(message):
+    for client in clients:
+        client.send(message.encode())
 
-# **Global Variables**:
-#    - IF NEEDED, Define any global variables that will be used throughout the code.
+def handle_client(client_socket, client_name):
+    print('User ' + client_name + ' joined' )
+    while True:
+        try:
+            if select.select([client_socket], [], [], 1)[0]:
+                message = client_socket.recv(1024).decode()
+                print("Message received from {}: {}".format(client_name, message))
+                if message == 'exit':
+                        print('User ' + client_name + ' left')
+                        clients.remove(client_socket)
+                        break
+                else:
+                    broadcast(client_name +':'+ message)
 
-# **Function Definitions**:
-#    - In this section, you will implement the functions you will use in the server side.
-#    - Feel free to add more other functions, and more variables.
-#    - Make sure that names of functions and variables are meaningful.
-def run(serverSocket, serverPort):
-    # The main server function.
-    pass
+        except KeyboardInterrupt:
+            break
 
-# **Main Code**:  
+
+def run_server(server_socket, server_port):
+    print("\nCHATROOM")
+    print('\nThis is the server side.\nI am ready to receive connections on port', server_port)
+
+    while True:
+        try:
+            client_socket, client_addr = server_socket.accept()
+            clients.append(client_socket)
+            if select.select([client_socket], [], [], 1)[0]:
+                client_name=client_socket.recv(1024).decode()
+                client_thread = threading.Thread(target=handle_client, args=(client_socket,client_name))
+                client_thread.start()
+        except KeyboardInterrupt:
+            client_thread.join()
+            print('\ninterrupt received: shutting down')
+            break
+    for client_socket in clients:
+        client_socket.close()
+    server_socket.close()
+    print('server shut down')
+
 if __name__ == "__main__":
+    clients = []
     server_port = 9301
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)# Creating a TCP socket.
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(('127.0.0.1', server_port))
-    server_socket.listen(3) # size of the waiting_queue that stores the incoming requests to connect.
-    
-    # please note that listen() method is NOT for setting the maximum clients to connect to server.
-    # didnt get it? basically, when the process (assume process is man that execute the code line by line) is executing the accept() method on the server side, 
-    # the process holds or waits there until a client sends a request to connect and then the process continue executing the rest of the code.
-    # good! what if there is another client wants to connect and the process on the server side isnt executing the accept() method at the same time,
-    # Now listen() method joins the party to solve this issue, it lets the incoming requests from the other clients to be stored in a queue or list until the process execute the accept() method.
-    # the size of the queue is set using listen(size). IF YOU STILL DONT GET IT, SEND ME AN EMAIL.
+    server_socket.listen(5)
 
-    clients = [] #list to add the connected client sockets , feel free to adjust it to other place
-    run(server_socket,server_port)# Calling the function to start the server.
+    run_server(server_socket,server_port)
